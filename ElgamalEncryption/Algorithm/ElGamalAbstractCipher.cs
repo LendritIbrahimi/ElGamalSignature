@@ -55,4 +55,8 @@ public abstract class ElGamalAbstractCipher {
         // return the contents of the stream as a byte array
         return x_stream.ToArray(  );
     }
-    
+   
+    protected abstract byte[] ProcessDataBlock(byte[] p_block);
+
+    protected abstract byte[] ProcessFinalDataBlock(byte[] p_final_block);
+}
