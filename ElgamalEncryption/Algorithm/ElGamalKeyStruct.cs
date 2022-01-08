@@ -1,5 +1,4 @@
 ﻿using ElgamalEncryption.Algorithm.misc;
-using System.Numerics;
 
 namespace ElgamalEncryption.Algorithm
 {
