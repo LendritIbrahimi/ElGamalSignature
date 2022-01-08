@@ -1,10 +1,13 @@
 ﻿using System;
 
-[Serializable]
-public struct ElGamalParameters
+namespace ElgamalEncryption.Algorithm
 {
-    public byte[] P;
-    public byte[] G;
-    public byte[] Y;
-    [NonSerialized] public byte[] X;
+    [Serializable]
+    public struct ElGamalParameters
+    {
+        public byte[] P;
+        public byte[] G;
+        public byte[] Y;
+        [NonSerialized] public byte[] X;
+    }
 }
