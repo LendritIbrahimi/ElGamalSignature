@@ -32,3 +32,19 @@ public class ElGamalEncryptor : ElGamalAbstractCipher {
         // return the result array
         return x_result;
     }
+    otected override byte[] ProcessFinalDataBlock(byte[] p_final_block) {
+        if (p_final_block.Length > 0) {
+            if (p_final_block.Length < o_block_size) {
+                // create a fullsize block which contains the
+                // data to encrypt followed by trailing zeros
+                byte[] x_padded = new byte[o_block_size];
+                Array.Copy(p_final_block, 0, x_padded, 0, p_final_block.Length);
+                return ProcessDataBlock(x_padded);
+            } else {
+                return ProcessDataBlock(p_final_block);
+            }
+        } else {
+            return new byte[0];
+        }
+    }
+}
