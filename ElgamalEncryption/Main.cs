@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace ElgamalEncryption
 {
-    public partial class Main : Form
-    {
-        public Main()
-        {
-            InitializeComponent();
-        }
+	public partial class Main : Form
+	{
+		public Main()
+		{
+			InitializeComponent();
+		}
 
-    }
+	}
 }
