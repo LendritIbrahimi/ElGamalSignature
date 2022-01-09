@@ -12,6 +12,9 @@ A **[digital signature](https://en.wikipedia.org/wiki/Digital_signature)** is a 
 
 ElGamal encryption is used in the free **[GNU Privacy Guard](https://gnupg.org/)** software, recent versions of **[Pretty Good Privacy](https://en.wikipedia.org/wiki/Pretty_Good_Privacy)** (PGP), and other cryptosystems.
 
+The implementation of this algorithm has been adapted from the **[eTutorials](http://etutorials.org/)** chapter [15.3 Extending the .NET Framework](http://etutorials.org/Programming/Programming+.net+security/Part+III+.NET+Cryptography/Chapter+15.+Asymmetric+Encryption/15.3+Extending+the+.NET+Framework/?fbclid=IwAR3YQ16U1oiUFXItcU4pHlS8wgZuC31KvbrDwnbcHh12LBpwFgLlikMl2ww%2F/).
+
+
 ## Installation and Execution
 To run this you can choose one of two paths:
 
