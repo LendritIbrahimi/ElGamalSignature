@@ -16,26 +16,19 @@ ElGamal encryption is used in the free **[GNU Privacy Guard](https://gnupg.org/)
 To run this you can choose one of two paths:
 
 1. Releases
-
--Go to https://github.com/kastriotsalihu1/elgamal-encryption/releases
-
--download the latest relase assets
-
--execute the **.exe** file, or
+   - Go to https://github.com/kastriotsalihu1/elgamal-encryption/releases
+   - download the latest relase assets
+   - execute the **.exe** file, or
 
 2. Visual Studio
+   - Download Visual Studio from https://visualstudio.microsoft.com/downloads/
+   - Download the source code 
+   
+   ![Download the source code](https://drive.google.com/uc?export=view&id=1svkjbWMWeZK4RJ9Q5mRAlzBr4gd3W-fT)
+   - Open the **.sln** in Visual Studio
+   - Build and Run project
 
--Download Visual Studio from https://visualstudio.microsoft.com/downloads/
-
--Download the source code
-
-![Download the source code](https://drive.google.com/uc?export=view&id=1svkjbWMWeZK4RJ9Q5mRAlzBr4gd3W-fT)
-
--Open the **.sln** in Visual Studio
-
--Build and Run project
-
-![Run](https://drive.google.com/uc?export=view&id=1YTl73yACNpHhf5JE7VuXC7dty2DMZIMx)
+   ![Run](https://drive.google.com/uc?export=view&id=1YTl73yACNpHhf5JE7VuXC7dty2DMZIMx)
 
 ## Usage
 
@@ -46,14 +39,11 @@ You can use this project to make a digital signature of a message.
 It has two primary modes of execution
 
 1. Automatic
-2. 
-In this mode you just enter the message and the generation of the private and public keys and the prime number is automatic.
-
+   - In this mode you just enter the message and the generation of the private and public keys and the prime number is automatic.
 ![Automatic mode](https://drive.google.com/uc?export=view&id=1WE25Nfoq_bUYC2z0cllWuOSTnZLdvNva)
 
 2. Manual
-3. 
-In this mode the message, the private key, the public key and the prime number needed for the algorithm must be set manually.
+   - In this mode the message, the private key, the public key and the prime number needed for the algorithm must be set manually.
 
 
 ## Contributing
@@ -62,13 +52,13 @@ This project is closed, and will not be updated further.
 
 The collaborators and creators of this project are: 
 
-Kastriot Salihu @kastriotsalihu1
+@kastriotsalihu1 - Kastriot Salihu
 
-Lendrit Ibrahimi @LendritIbrahimi
+@LendritIbrahimi - Lendrit Ibrahimi
 
-Nazife Beqiri @NazifeBEQIRI
+@NazifeBEQIRI - Nazife Beqiri
 
-Urim Hoxha @UrimH
+@UrimH - Urim Hoxha
 
 ## License 
 
