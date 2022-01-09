@@ -25,7 +25,7 @@ To run this you can choose one of two paths:
 
 2. Visual Studio
 
--Download from https://visualstudio.microsoft.com/downloads/
+-Download Visual Studio from https://visualstudio.microsoft.com/downloads/
 
 -Download the source code
 
