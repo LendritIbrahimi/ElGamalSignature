@@ -34,21 +34,24 @@ To run this you can choose one of two paths:
 
 You can use this project to make a digital signature for a message by using the ElGamal Encryption method.
 
-![Home screen preview](https://drive.google.com/uc?export=view&id=1DegfzsETtUZEaCHKfA6rj0qXY7cljIhL)
-
 It has two primary modes of execution
 
-1. Automatic
-2. 
-This mode has only input field which is the message awaiting to be signed, the keys will be generated randomly and a digital signature will be shown.
+### 1. Automatic
 
-![Automatic mode](https://drive.google.com/uc?export=view&id=1WE25Nfoq_bUYC2z0cllWuOSTnZLdvNva)
+   ![Automatic mode](https://drive.google.com/uc?export=view&id=1zEuG4hJGlMXCp7bmAj7KjPj97ttsJuyA)
+   
+   This mode has only input field which is the message awaiting to be signed, the keys will be generated randomly and a digital signature will be shown.
 
-2. Manual
-3. 
+  ![Automatic mode test](https://drive.google.com/uc?export=view&id=19U6ysCSgAXVKYS-Zj4Kf4P2FXdwf_zd7)
+  
+### 2. Manual
+
+   ![Manual mode](https://drive.google.com/uc?export=view&id=1cv_JuyjDWPHoCu96kTmQMgB2mtoKpn_e)
+
 This mode has multiple input fields: one for the message, three for the public keys and one for the private key. A digital signature will be shown.
 
-
+   ![Manual mode test](https://drive.google.com/uc?export=view&id=1yQ9Yd44feuW9NgPK7nA-Vunoh2NBQgPn)
+   
 ## Contributing
 
 This project is closed, and will not be updated further.
