@@ -40,7 +40,8 @@ It has two primary modes of execution
 
 1. Automatic
    - In this mode you just enter the message and the generation of the private and public keys and the prime number is automatic.
-![Automatic mode](https://drive.google.com/uc?export=view&id=1WE25Nfoq_bUYC2z0cllWuOSTnZLdvNva)
+   
+   ![Automatic mode](https://drive.google.com/uc?export=view&id=1WE25Nfoq_bUYC2z0cllWuOSTnZLdvNva)
 
 2. Manual
    - In this mode the message, the private key, the public key and the prime number needed for the algorithm must be set manually.
