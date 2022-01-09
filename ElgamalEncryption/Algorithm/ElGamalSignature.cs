@@ -45,28 +45,4 @@ public class ElGamalSignature
         return x_result;
 
     }
-    public static bool VerifySignature(byte[] p_data, byte[] p_sig,
-        ElGamalKeyStruct p_key_struct)
-    {     // define the result size
-        int x_result_size = p_sig.Length / 2;
-
-        // extract the byte arrays that represent A and B
-        byte[] x_a_bytes = new byte[x_result_size];
-        Array.Copy(p_sig, 0, x_a_bytes, 0, x_a_bytes.Length);
-        byte[] x_b_bytes = new Byte[x_result_size];
-        Array.Copy(p_sig, x_result_size, x_b_bytes, 0, x_b_bytes.Length);
-
-        // create big integers from the byte arrays
-        BigInteger A = new BigInteger(x_a_bytes);
-        BigInteger B = new BigInteger(x_b_bytes);   // create the two results
-        BigInteger x_result1 = mod(p_key_struct.Y.modPow(A, p_key_struct.P)
-            * A.modPow(B, p_key_struct.P), p_key_struct.P);
-
-        BigInteger x_result2 = p_key_struct.G.modPow(new BigInteger(p_data),
-            p_key_struct.P);
-
-        // return true if the two results are the same
-
-        return x_result1 == x_result2;
-    }
 }

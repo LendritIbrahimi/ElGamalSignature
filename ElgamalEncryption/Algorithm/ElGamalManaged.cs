@@ -29,9 +29,9 @@ namespace ElgamalEncryption.Algorithm
             // set the range of legal keys
             LegalKeySizesValue = new KeySizes[] { new KeySizes(384, 1088, 8) };
         }
-        //The SignatureAlgorithm and KeyExchangeAlgorithm properties return a string value that indicates how the class performs encryption and creates digital signatures; we are implementing the "raw" ElGamal algorithm, and so both of these properties simply return ElGamal:
+
         //The CreateKeyPair method follows the ElGamal key generation protocol to create a new key pair; the key parameter values are set using the ElGamalKeyStruct instance variable; the method accepts an integer argument that specifies the required key length:
-        private void CreateKeyPair(int p_key_strength)
+        public void CreateKeyPair(int p_key_strength)
         {
             // create the random number generator
             Random x_random_generator = new Random();
@@ -56,39 +56,9 @@ namespace ElgamalEncryption.Algorithm
             return o_key_struct.P == 0 && o_key_struct.G == 0 && o_key_struct.Y == 0;
         }
 
-        public ElGamalKeyStruct KeyStruct
-        {
-            get
-            {
-                if (NeedToGenerateKey())
-                {
-                    CreateKeyPair(KeySizeValue);
-                }
-                return o_key_struct;
-            }
-            set
-            {
-                o_key_struct = value;
-            }
-        }
-
-        // The ImportParameters method accepts an instance of the ElGamalParameters structure and creates the BigIntegers that we will use to represent the key; this method allows users to import a previously created key and is used by the FromXmlString method in the abstract ElGamal class:
-        public override void ImportParameters(ElGamalParameters p_parameters)
-        {
-            // obtain the  big integer values from the byte parameter values
-            o_key_struct.P = new BigInteger(p_parameters.P);
-            o_key_struct.G = new BigInteger(p_parameters.G);
-            o_key_struct.Y = new BigInteger(p_parameters.Y);
-            if (p_parameters.X != null && p_parameters.X.Length > 0)
-            {
-                o_key_struct.X = new BigInteger(p_parameters.X);
-            }
-            // set the length of the key based on the import
-            KeySizeValue = o_key_struct.P.bitCount();
-        }
         public override void ImportParameters(ElGamalKeyStruct keyStruct)
         {
-        
+
             o_key_struct.P = keyStruct.P;
             o_key_struct.G = keyStruct.G;
             o_key_struct.Y = keyStruct.Y;
@@ -98,69 +68,9 @@ namespace ElgamalEncryption.Algorithm
             }
         }
 
-        // The ExportParameters method creates an ElGamalParameters structure using the key represented by the instance ElGamalKeyStruct member. Notice that we check to see if we need to create a new key pair before we export the key details to ensure that there is something to export. The Boolean argument determines whether to export the private parameters, in keeping with the model used by the RSA implementation classes:
-        public override ElGamalParameters ExportParameters(bool p_include_private_params)
-        {
-            if (NeedToGenerateKey())
-            {
-                // we need to create a new key before we can export 
-                CreateKeyPair(KeySizeValue);
-            }
-
-            // create the parameter set
-            ElGamalParameters x_params = new ElGamalParameters();
-            // set the public values of the parameters
-            x_params.P = o_key_struct.P.getBytes();
-            x_params.G = o_key_struct.G.getBytes();
-            x_params.Y = o_key_struct.Y.getBytes();
-
-            // if required, include the private value, X
-            if (p_include_private_params)
-            {
-                x_params.X = o_key_struct.X.getBytes();
-            }
-            else
-            {
-                // ensure that we zero the value
-                x_params.X = new byte[1];
-            }
-            // return the parameter set
-            return x_params;
-        }
-
-        // The EncryptData and DecryptData methods provide access to the ElGamal encryption and decryption functions; create a new key pair if the user has not imported a key, and then pass the data to the specialized ElGamalEncryptor and ElGamalDecryptor classes, which we detail in the next sections:
-        public override byte[] EncryptData(byte[] p_data)
-        {
-            if (NeedToGenerateKey())
-            {
-                // we need to create a new key before we can export 
-                CreateKeyPair(KeySizeValue);
-            }
-            // encrypt the data
-            ElGamalEncryptor x_enc = new ElGamalEncryptor(o_key_struct);
-            return x_enc.ProcessData(p_data);
-        }
-
-        public override byte[] DecryptData(byte[] p_data)
-        {
-            if (NeedToGenerateKey())
-            {
-                // we need to create a new key before we can export 
-                CreateKeyPair(KeySizeValue);
-            }
-            // encrypt the data
-            ElGamalDecryptor x_enc = new(o_key_struct);
-            return x_enc.ProcessData(p_data);
-        }
-
-        public ElGamalKeyStruct GetKeys()
+        public ElGamalKeyStruct ExportParameters()
         {
             return o_key_struct;
-        }
-        // The Dispose method is useful for releasing unmanaged resources, but you do not need to do anything in this method since the implementation is written entirely in managed code, but it is a requirement of extending from the AsymmetricAlgorithm class:
-        protected override void Dispose(bool p_bool)
-        {
-            // do nothing - no unmanaged resources to release
         }
 
         // The Sign and VerifySignature methods support the creation and verification of digital signatures; although you have implemented these methods to comply with the abstractions of the ElGamal class
@@ -172,17 +82,6 @@ namespace ElgamalEncryption.Algorithm
                 CreateKeyPair(KeySizeValue);
             }
             return ElGamalSignature.CreateSignature(p_hashcode, o_key_struct);
-        }
-
-        public override bool VerifySignature(byte[] p_hashcode, byte[] p_signature)
-        {
-            if (NeedToGenerateKey())
-            {
-                // we need to create a new key before we can export 
-                CreateKeyPair(KeySizeValue);
-            }
-            return ElGamalSignature.VerifySignature(p_hashcode,
-              p_signature, o_key_struct);
         }
     }
 }
