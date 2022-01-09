@@ -6,7 +6,7 @@ namespace ElgamalEncryption.Algorithm
 {
     public class ElGamalManaged : ElGamal
     {
-        ElGamalKeyStruct o_key_struct;
+        public ElGamalKeyStruct o_key_struct;
 
         // The first part of the constructor initializes the BigIntegers contained in the ElGamalKeyStruct to 0;
         // this gives a known starting point, and you can assume the user has not imported a key if the public key parameter values are all set to 0:
@@ -143,6 +143,10 @@ namespace ElgamalEncryption.Algorithm
             return x_enc.ProcessData(p_data);
         }
 
+        public ElGamalKeyStruct GetKeys()
+        {
+            return o_key_struct;
+        }
         // The Dispose method is useful for releasing unmanaged resources, but you do not need to do anything in this method since the implementation is written entirely in managed code, but it is a requirement of extending from the AsymmetricAlgorithm class:
         protected override void Dispose(bool p_bool)
         {
@@ -154,6 +158,7 @@ namespace ElgamalEncryption.Algorithm
         {
             if (NeedToGenerateKey())
             {
+                Console.WriteLine("HELLO KEYS ARE BEING REGENERATED");
                 // we need to create a new key before we can export 
                 CreateKeyPair(KeySizeValue);
             }
