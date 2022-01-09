@@ -25,11 +25,17 @@ To run this you can choose one of two paths:
 
 -Download from https://visualstudio.microsoft.com/downloads/
 
--Download the source code ![Download the source code](https://drive.google.com/uc?export=view&id=1svkjbWMWeZK4RJ9Q5mRAlzBr4gd3W-fT)
+https://drive.google.com/uc?export=view&id=1svkjbWMWeZK4RJ9Q5mRAlzBr4gd3W-fT
+
+-Download the source code
+
+![Download the source code](https://drive.google.com/uc?export=view&id=1svkjbWMWeZK4RJ9Q5mRAlzBr4gd3W-fT)
 
 -Open the **.sln** in Visual Studio
 
--Build and Run project ![Run](https://drive.google.com/uc?export=view&id=1YTl73yACNpHhf5JE7VuXC7dty2DMZIMx)
+-Build and Run project
+
+![Run](https://drive.google.com/uc?export=view&id=1YTl73yACNpHhf5JE7VuXC7dty2DMZIMx)
 
 
 ## Usage
