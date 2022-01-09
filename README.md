@@ -36,7 +36,7 @@ To run this you can choose one of two paths:
 
 You can use this project to make a digital signature for a message by using the ElGamal Encryption method.
 
-It has two primary modes of execution:
+It supports two primary modes of execution:
 
 ### 1. Automatic
 
