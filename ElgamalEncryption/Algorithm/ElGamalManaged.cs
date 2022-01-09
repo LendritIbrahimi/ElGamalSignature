@@ -1,11 +1,13 @@
 ﻿using ElgamalEncryption.Algorithm.misc;
 using System;
+using System.Diagnostics;
 using System.Security.Cryptography;
 
 namespace ElgamalEncryption.Algorithm
 {
     public class ElGamalManaged : ElGamal
     {
+
         public ElGamalKeyStruct o_key_struct;
 
         // The first part of the constructor initializes the BigIntegers contained in the ElGamalKeyStruct to 0;
@@ -28,9 +30,6 @@ namespace ElgamalEncryption.Algorithm
             LegalKeySizesValue = new KeySizes[] { new KeySizes(384, 1088, 8) };
         }
         //The SignatureAlgorithm and KeyExchangeAlgorithm properties return a string value that indicates how the class performs encryption and creates digital signatures; we are implementing the "raw" ElGamal algorithm, and so both of these properties simply return ElGamal:
-        public override string SignatureAlgorithm { get { return "ElGamal"; } }
-        public override string KeyExchangeAlgorithm { get { return "ElGamal"; } }
-
         //The CreateKeyPair method follows the ElGamal key generation protocol to create a new key pair; the key parameter values are set using the ElGamalKeyStruct instance variable; the method accepts an integer argument that specifies the required key length:
         private void CreateKeyPair(int p_key_strength)
         {
@@ -86,6 +85,17 @@ namespace ElgamalEncryption.Algorithm
             }
             // set the length of the key based on the import
             KeySizeValue = o_key_struct.P.bitCount();
+        }
+        public override void ImportParameters(ElGamalKeyStruct keyStruct)
+        {
+        
+            o_key_struct.P = keyStruct.P;
+            o_key_struct.G = keyStruct.G;
+            o_key_struct.Y = keyStruct.Y;
+            if (keyStruct.X != 0)
+            {
+                o_key_struct.X = keyStruct.X;
+            }
         }
 
         // The ExportParameters method creates an ElGamalParameters structure using the key represented by the instance ElGamalKeyStruct member. Notice that we check to see if we need to create a new key pair before we export the key details to ensure that there is something to export. The Boolean argument determines whether to export the private parameters, in keeping with the model used by the RSA implementation classes:
@@ -158,7 +168,6 @@ namespace ElgamalEncryption.Algorithm
         {
             if (NeedToGenerateKey())
             {
-                Console.WriteLine("HELLO KEYS ARE BEING REGENERATED");
                 // we need to create a new key before we can export 
                 CreateKeyPair(KeySizeValue);
             }

@@ -40,30 +40,34 @@ namespace ElgamalEncryption
             this.pnlOutput = new System.Windows.Forms.Panel();
             this.btnInfo = new System.Windows.Forms.Button();
             this.pnlInput = new System.Windows.Forms.Panel();
+            this.lblY = new System.Windows.Forms.Label();
             this.lblPrime = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPrime = new System.Windows.Forms.TextBox();
+            this.lblPrivateKey = new System.Windows.Forms.Label();
+            this.lblP = new System.Windows.Forms.Label();
+            this.txtPublicY = new System.Windows.Forms.TextBox();
+            this.txtPublicG = new System.Windows.Forms.TextBox();
             this.txtPrivateKey = new System.Windows.Forms.TextBox();
             this.btnPrivateKey = new System.Windows.Forms.Button();
-            this.txtPublicKey = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtPublicP = new System.Windows.Forms.TextBox();
+            this.btnPublicP = new System.Windows.Forms.Button();
+            this.btnSignature = new System.Windows.Forms.Button();
             this.lblType = new System.Windows.Forms.Label();
             this.rbAuto = new System.Windows.Forms.RadioButton();
             this.rbManual = new System.Windows.Forms.RadioButton();
             this.pnlAutomatic = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.pnlManual = new System.Windows.Forms.Panel();
+            this.lblMY = new System.Windows.Forms.Label();
+            this.lblMG = new System.Windows.Forms.Label();
             this.lblMPrivateKey = new System.Windows.Forms.Label();
             this.txtMMessage = new System.Windows.Forms.TextBox();
             this.lblMPublicKey = new System.Windows.Forms.Label();
             this.btnMSign = new System.Windows.Forms.Button();
-            this.txtMPrime = new System.Windows.Forms.TextBox();
+            this.txtPublicMY = new System.Windows.Forms.TextBox();
+            this.txtPublicMG = new System.Windows.Forms.TextBox();
             this.txtMPrivateKey = new System.Windows.Forms.TextBox();
             this.lblMMessage = new System.Windows.Forms.Label();
             this.lblMMessageHash = new System.Windows.Forms.Label();
-            this.txtMPublicKey = new System.Windows.Forms.TextBox();
+            this.txtPublicMP = new System.Windows.Forms.TextBox();
             this.txtMSignature = new System.Windows.Forms.TextBox();
             this.btnMSignatureCopy = new System.Windows.Forms.Button();
             this.txtMMessageHash = new System.Windows.Forms.TextBox();
@@ -72,7 +76,7 @@ namespace ElgamalEncryption
             this.pnlOutput.SuspendLayout();
             this.pnlInput.SuspendLayout();
             this.pnlAutomatic.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlManual.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtInput
@@ -147,6 +151,7 @@ namespace ElgamalEncryption
             this.btnCopy.TabIndex = 2;
             this.btnCopy.Text = "Copy";
             this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // pnlOutput
             // 
@@ -172,61 +177,82 @@ namespace ElgamalEncryption
             // 
             // pnlInput
             // 
+            this.pnlInput.Controls.Add(this.lblY);
             this.pnlInput.Controls.Add(this.lblPrime);
-            this.pnlInput.Controls.Add(this.label2);
-            this.pnlInput.Controls.Add(this.label1);
-            this.pnlInput.Controls.Add(this.txtPrime);
+            this.pnlInput.Controls.Add(this.lblPrivateKey);
+            this.pnlInput.Controls.Add(this.lblP);
+            this.pnlInput.Controls.Add(this.txtPublicY);
+            this.pnlInput.Controls.Add(this.txtPublicG);
             this.pnlInput.Controls.Add(this.txtPrivateKey);
             this.pnlInput.Controls.Add(this.btnPrivateKey);
-            this.pnlInput.Controls.Add(this.txtPublicKey);
-            this.pnlInput.Controls.Add(this.button1);
+            this.pnlInput.Controls.Add(this.txtPublicP);
+            this.pnlInput.Controls.Add(this.btnPublicP);
             this.pnlInput.Controls.Add(this.lblDigest);
             this.pnlInput.Controls.Add(this.txtOutput);
             this.pnlInput.Controls.Add(this.lblSignature);
             this.pnlInput.Controls.Add(this.txtMessageDigest);
-            this.pnlInput.Controls.Add(this.button2);
+            this.pnlInput.Controls.Add(this.btnSignature);
             this.pnlInput.Controls.Add(this.btnCopy);
             this.pnlInput.Location = new System.Drawing.Point(3, 206);
             this.pnlInput.Name = "pnlInput";
             this.pnlInput.Size = new System.Drawing.Size(667, 361);
             this.pnlInput.TabIndex = 6;
             // 
+            // lblY
+            // 
+            this.lblY.AutoSize = true;
+            this.lblY.Location = new System.Drawing.Point(342, 244);
+            this.lblY.Name = "lblY";
+            this.lblY.Size = new System.Drawing.Size(99, 20);
+            this.lblY.TabIndex = 7;
+            this.lblY.Text = "Public Key (Y)";
+            // 
             // lblPrime
             // 
             this.lblPrime.AutoSize = true;
             this.lblPrime.Location = new System.Drawing.Point(3, 244);
             this.lblPrime.Name = "lblPrime";
-            this.lblPrime.Size = new System.Drawing.Size(105, 20);
+            this.lblPrime.Size = new System.Drawing.Size(101, 20);
             this.lblPrime.TabIndex = 7;
-            this.lblPrime.Text = "Prime Number";
+            this.lblPrime.Text = "Public Key (G)";
             // 
-            // label2
+            // lblPrivateKey
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 302);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Private Key";
+            this.lblPrivateKey.AutoSize = true;
+            this.lblPrivateKey.Location = new System.Drawing.Point(3, 302);
+            this.lblPrivateKey.Name = "lblPrivateKey";
+            this.lblPrivateKey.Size = new System.Drawing.Size(105, 20);
+            this.lblPrivateKey.TabIndex = 7;
+            this.lblPrivateKey.Text = "Private Key (X)";
             // 
-            // label1
+            // lblP
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 190);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Public Key";
+            this.lblP.AutoSize = true;
+            this.lblP.Location = new System.Drawing.Point(3, 190);
+            this.lblP.Name = "lblP";
+            this.lblP.Size = new System.Drawing.Size(99, 20);
+            this.lblP.TabIndex = 7;
+            this.lblP.Text = "Public Key (P)";
             // 
-            // txtPrime
+            // txtPublicY
             // 
-            this.txtPrime.BackColor = System.Drawing.Color.LightGray;
-            this.txtPrime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPrime.Location = new System.Drawing.Point(5, 267);
-            this.txtPrime.Name = "txtPrime";
-            this.txtPrime.ReadOnly = true;
-            this.txtPrime.Size = new System.Drawing.Size(657, 27);
-            this.txtPrime.TabIndex = 6;
+            this.txtPublicY.BackColor = System.Drawing.Color.LightGray;
+            this.txtPublicY.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPublicY.Location = new System.Drawing.Point(342, 267);
+            this.txtPublicY.Name = "txtPublicY";
+            this.txtPublicY.ReadOnly = true;
+            this.txtPublicY.Size = new System.Drawing.Size(320, 27);
+            this.txtPublicY.TabIndex = 6;
+            // 
+            // txtPublicG
+            // 
+            this.txtPublicG.BackColor = System.Drawing.Color.LightGray;
+            this.txtPublicG.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPublicG.Location = new System.Drawing.Point(5, 267);
+            this.txtPublicG.Name = "txtPublicG";
+            this.txtPublicG.ReadOnly = true;
+            this.txtPublicG.Size = new System.Drawing.Size(331, 27);
+            this.txtPublicG.TabIndex = 6;
             // 
             // txtPrivateKey
             // 
@@ -249,32 +275,34 @@ namespace ElgamalEncryption
             this.btnPrivateKey.UseVisualStyleBackColor = true;
             this.btnPrivateKey.Click += new System.EventHandler(this.btnPrivateKey_Click);
             // 
-            // txtPublicKey
+            // txtPublicP
             // 
-            this.txtPublicKey.BackColor = System.Drawing.Color.LightGray;
-            this.txtPublicKey.Location = new System.Drawing.Point(5, 213);
-            this.txtPublicKey.Name = "txtPublicKey";
-            this.txtPublicKey.ReadOnly = true;
-            this.txtPublicKey.Size = new System.Drawing.Size(552, 27);
-            this.txtPublicKey.TabIndex = 6;
+            this.txtPublicP.BackColor = System.Drawing.Color.LightGray;
+            this.txtPublicP.Location = new System.Drawing.Point(5, 213);
+            this.txtPublicP.Name = "txtPublicP";
+            this.txtPublicP.ReadOnly = true;
+            this.txtPublicP.Size = new System.Drawing.Size(552, 27);
+            this.txtPublicP.TabIndex = 6;
             // 
-            // button1
+            // btnPublicP
             // 
-            this.button1.Location = new System.Drawing.Point(562, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 33);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Copy";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPublicP.Location = new System.Drawing.Point(562, 210);
+            this.btnPublicP.Name = "btnPublicP";
+            this.btnPublicP.Size = new System.Drawing.Size(100, 33);
+            this.btnPublicP.TabIndex = 5;
+            this.btnPublicP.Text = "Copy";
+            this.btnPublicP.UseVisualStyleBackColor = true;
+            this.btnPublicP.Click += new System.EventHandler(this.btnPublicP_Click);
             // 
-            // button2
+            // btnSignature
             // 
-            this.button2.Location = new System.Drawing.Point(562, 150);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 33);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Copy";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSignature.Location = new System.Drawing.Point(562, 150);
+            this.btnSignature.Name = "btnSignature";
+            this.btnSignature.Size = new System.Drawing.Size(100, 33);
+            this.btnSignature.TabIndex = 2;
+            this.btnSignature.Text = "Copy";
+            this.btnSignature.UseVisualStyleBackColor = true;
+            this.btnSignature.Click += new System.EventHandler(this.btnSignature_Click);
             // 
             // lblType
             // 
@@ -317,45 +345,57 @@ namespace ElgamalEncryption
             this.pnlAutomatic.Size = new System.Drawing.Size(675, 588);
             this.pnlAutomatic.TabIndex = 9;
             // 
-            // panel1
+            // pnlManual
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lblMPrivateKey);
-            this.panel1.Controls.Add(this.txtMMessage);
-            this.panel1.Controls.Add(this.lblMPublicKey);
-            this.panel1.Controls.Add(this.btnMSign);
-            this.panel1.Controls.Add(this.txtMPrime);
-            this.panel1.Controls.Add(this.txtMPrivateKey);
-            this.panel1.Controls.Add(this.lblMMessage);
-            this.panel1.Controls.Add(this.lblMMessageHash);
-            this.panel1.Controls.Add(this.txtMPublicKey);
-            this.panel1.Controls.Add(this.txtMSignature);
-            this.panel1.Controls.Add(this.btnMSignatureCopy);
-            this.panel1.Controls.Add(this.txtMMessageHash);
-            this.panel1.Controls.Add(this.lblMSignature);
-            this.panel1.Controls.Add(this.btnMHashCopy);
-            this.panel1.Location = new System.Drawing.Point(691, 62);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(667, 567);
-            this.panel1.TabIndex = 10;
+            this.pnlManual.Controls.Add(this.lblMY);
+            this.pnlManual.Controls.Add(this.lblMG);
+            this.pnlManual.Controls.Add(this.lblMPrivateKey);
+            this.pnlManual.Controls.Add(this.txtMMessage);
+            this.pnlManual.Controls.Add(this.lblMPublicKey);
+            this.pnlManual.Controls.Add(this.btnMSign);
+            this.pnlManual.Controls.Add(this.txtPublicMY);
+            this.pnlManual.Controls.Add(this.txtPublicMG);
+            this.pnlManual.Controls.Add(this.txtMPrivateKey);
+            this.pnlManual.Controls.Add(this.lblMMessage);
+            this.pnlManual.Controls.Add(this.lblMMessageHash);
+            this.pnlManual.Controls.Add(this.txtPublicMP);
+            this.pnlManual.Controls.Add(this.txtMSignature);
+            this.pnlManual.Controls.Add(this.btnMSignatureCopy);
+            this.pnlManual.Controls.Add(this.txtMMessageHash);
+            this.pnlManual.Controls.Add(this.lblMSignature);
+            this.pnlManual.Controls.Add(this.btnMHashCopy);
+            this.pnlManual.Location = new System.Drawing.Point(10, 62);
+            this.pnlManual.Name = "pnlManual";
+            this.pnlManual.Size = new System.Drawing.Size(675, 588);
+            this.pnlManual.TabIndex = 10;
+            this.pnlManual.Visible = false;
             // 
-            // label3
+            // lblMY
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 259);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Prime Number";
+            this.lblMY.AutoSize = true;
+            this.lblMY.Location = new System.Drawing.Point(331, 203);
+            this.lblMY.Name = "lblMY";
+            this.lblMY.Size = new System.Drawing.Size(99, 20);
+            this.lblMY.TabIndex = 7;
+            this.lblMY.Text = "Public Key (Y)";
+            // 
+            // lblMG
+            // 
+            this.lblMG.AutoSize = true;
+            this.lblMG.Location = new System.Drawing.Point(3, 203);
+            this.lblMG.Name = "lblMG";
+            this.lblMG.Size = new System.Drawing.Size(101, 20);
+            this.lblMG.TabIndex = 7;
+            this.lblMG.Text = "Public Key (G)";
             // 
             // lblMPrivateKey
             // 
             this.lblMPrivateKey.AutoSize = true;
-            this.lblMPrivateKey.Location = new System.Drawing.Point(3, 203);
+            this.lblMPrivateKey.Location = new System.Drawing.Point(3, 259);
             this.lblMPrivateKey.Name = "lblMPrivateKey";
-            this.lblMPrivateKey.Size = new System.Drawing.Size(82, 20);
+            this.lblMPrivateKey.Size = new System.Drawing.Size(105, 20);
             this.lblMPrivateKey.TabIndex = 7;
-            this.lblMPrivateKey.Text = "Private Key";
+            this.lblMPrivateKey.Text = "Private Key (X)";
             // 
             // txtMMessage
             // 
@@ -370,9 +410,9 @@ namespace ElgamalEncryption
             this.lblMPublicKey.AutoSize = true;
             this.lblMPublicKey.Location = new System.Drawing.Point(3, 146);
             this.lblMPublicKey.Name = "lblMPublicKey";
-            this.lblMPublicKey.Size = new System.Drawing.Size(77, 20);
+            this.lblMPublicKey.Size = new System.Drawing.Size(99, 20);
             this.lblMPublicKey.TabIndex = 7;
-            this.lblMPublicKey.Text = "Public Key";
+            this.lblMPublicKey.Text = "Public Key (P)";
             // 
             // btnMSign
             // 
@@ -384,20 +424,29 @@ namespace ElgamalEncryption
             this.btnMSign.UseVisualStyleBackColor = true;
             this.btnMSign.Click += new System.EventHandler(this.btnMSign_Click);
             // 
-            // txtMPrime
+            // txtPublicMY
             // 
-            this.txtMPrime.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMPrime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMPrime.Location = new System.Drawing.Point(5, 282);
-            this.txtMPrime.Name = "txtMPrime";
-            this.txtMPrime.Size = new System.Drawing.Size(651, 27);
-            this.txtMPrime.TabIndex = 6;
+            this.txtPublicMY.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPublicMY.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPublicMY.Location = new System.Drawing.Point(333, 226);
+            this.txtPublicMY.Name = "txtPublicMY";
+            this.txtPublicMY.Size = new System.Drawing.Size(322, 27);
+            this.txtPublicMY.TabIndex = 6;
+            // 
+            // txtPublicMG
+            // 
+            this.txtPublicMG.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPublicMG.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPublicMG.Location = new System.Drawing.Point(5, 226);
+            this.txtPublicMG.Name = "txtPublicMG";
+            this.txtPublicMG.Size = new System.Drawing.Size(322, 27);
+            this.txtPublicMG.TabIndex = 6;
             // 
             // txtMPrivateKey
             // 
             this.txtMPrivateKey.BackColor = System.Drawing.SystemColors.Window;
             this.txtMPrivateKey.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMPrivateKey.Location = new System.Drawing.Point(5, 226);
+            this.txtMPrivateKey.Location = new System.Drawing.Point(5, 282);
             this.txtMPrivateKey.Name = "txtMPrivateKey";
             this.txtMPrivateKey.Size = new System.Drawing.Size(651, 27);
             this.txtMPrivateKey.TabIndex = 6;
@@ -420,13 +469,13 @@ namespace ElgamalEncryption
             this.lblMMessageHash.TabIndex = 4;
             this.lblMMessageHash.Text = "Message Digest";
             // 
-            // txtMPublicKey
+            // txtPublicMP
             // 
-            this.txtMPublicKey.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMPublicKey.Location = new System.Drawing.Point(5, 169);
-            this.txtMPublicKey.Name = "txtMPublicKey";
-            this.txtMPublicKey.Size = new System.Drawing.Size(651, 27);
-            this.txtMPublicKey.TabIndex = 6;
+            this.txtPublicMP.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPublicMP.Location = new System.Drawing.Point(5, 169);
+            this.txtPublicMP.Name = "txtPublicMP";
+            this.txtPublicMP.Size = new System.Drawing.Size(651, 27);
+            this.txtPublicMP.TabIndex = 6;
             // 
             // txtMSignature
             // 
@@ -446,6 +495,7 @@ namespace ElgamalEncryption
             this.btnMSignatureCopy.TabIndex = 2;
             this.btnMSignatureCopy.Text = "Copy";
             this.btnMSignatureCopy.UseVisualStyleBackColor = true;
+            this.btnMSignatureCopy.Click += new System.EventHandler(this.btnMSignatureCopy_Click);
             // 
             // txtMMessageHash
             // 
@@ -473,15 +523,16 @@ namespace ElgamalEncryption
             this.btnMHashCopy.TabIndex = 2;
             this.btnMHashCopy.Text = "Copy";
             this.btnMHashCopy.UseVisualStyleBackColor = true;
+            this.btnMHashCopy.Click += new System.EventHandler(this.btnMHashCopy_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1370, 641);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(686, 267);
             this.Controls.Add(this.pnlAutomatic);
+            this.Controls.Add(this.pnlManual);
             this.Controls.Add(this.rbManual);
             this.Controls.Add(this.rbAuto);
             this.Controls.Add(this.lblType);
@@ -496,8 +547,8 @@ namespace ElgamalEncryption
             this.pnlInput.ResumeLayout(false);
             this.pnlInput.PerformLayout();
             this.pnlAutomatic.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlManual.ResumeLayout(false);
+            this.pnlManual.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,18 +567,18 @@ namespace ElgamalEncryption
         private System.Windows.Forms.Panel pnlOutput;
         private System.Windows.Forms.Panel pnlInput;
         private System.Windows.Forms.Button btnInfo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPrivateKey;
+        private System.Windows.Forms.Label lblP;
         private System.Windows.Forms.TextBox txtPrivateKey;
         private System.Windows.Forms.Button btnPrivateKey;
-        private System.Windows.Forms.TextBox txtPublicKey;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtPublicP;
+        private System.Windows.Forms.Button btnPublicP;
+        private System.Windows.Forms.Button btnSignature;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.RadioButton rbAuto;
         private System.Windows.Forms.RadioButton rbManual;
         private System.Windows.Forms.Panel pnlAutomatic;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlManual;
         private System.Windows.Forms.Label lblMPrivateKey;
         private System.Windows.Forms.TextBox txtMMessage;
         private System.Windows.Forms.Label lblMPublicKey;
@@ -535,16 +586,20 @@ namespace ElgamalEncryption
         private System.Windows.Forms.TextBox txtMPrivateKey;
         private System.Windows.Forms.Label lblMMessage;
         private System.Windows.Forms.Label lblMMessageHash;
-        private System.Windows.Forms.TextBox txtMPublicKey;
+        private System.Windows.Forms.TextBox txtPublicMP;
         private System.Windows.Forms.TextBox txtMSignature;
         private System.Windows.Forms.Button btnMSignatureCopy;
         private System.Windows.Forms.TextBox txtMMessageHash;
         private System.Windows.Forms.Label lblMSignature;
         private System.Windows.Forms.Button btnMHashCopy;
         private System.Windows.Forms.Label lblPrime;
-        private System.Windows.Forms.TextBox txtPrime;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMPrime;
+        private System.Windows.Forms.TextBox txtPublicG;
+        private System.Windows.Forms.Label lblMG;
+        private System.Windows.Forms.TextBox txtPublicMG;
+        private System.Windows.Forms.Label lblY;
+        private System.Windows.Forms.TextBox txtPublicY;
+        private System.Windows.Forms.Label lblMY;
+        private System.Windows.Forms.TextBox txtPublicMY;
     }
 }
 

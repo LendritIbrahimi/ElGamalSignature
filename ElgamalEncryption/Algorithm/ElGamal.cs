@@ -8,6 +8,7 @@ namespace ElgamalEncryption.Algorithm
     public abstract class ElGamal : AsymmetricAlgorithm
     {
         public abstract void ImportParameters(ElGamalParameters p_parameters);
+        public abstract void ImportParameters(ElGamalKeyStruct keyStruct);
         public abstract ElGamalParameters ExportParameters(bool
             p_include_private_params);
         public abstract byte[] EncryptData(byte[] p_data);
