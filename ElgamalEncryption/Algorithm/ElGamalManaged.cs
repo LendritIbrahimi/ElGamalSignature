@@ -152,12 +152,23 @@ namespace ElgamalEncryption.Algorithm
         // The Sign and VerifySignature methods support the creation and verification of digital signatures; although you have implemented these methods to comply with the abstractions of the ElGamal class
         public override byte[] Sign(byte[] p_hashcode)
         {
-            throw new System.NotImplementedException();
+            if (NeedToGenerateKey())
+            {
+                // we need to create a new key before we can export 
+                CreateKeyPair(KeySizeValue);
+            }
+            return ElGamalSignature.CreateSignature(p_hashcode, o_key_struct);
         }
 
         public override bool VerifySignature(byte[] p_hashcode, byte[] p_signature)
         {
-            throw new System.NotImplementedException();
+            if (NeedToGenerateKey())
+            {
+                // we need to create a new key before we can export 
+                CreateKeyPair(KeySizeValue);
+            }
+            return ElGamalSignature.VerifySignature(p_hashcode,
+              p_signature, o_key_struct);
         }
     }
 }
