@@ -39,7 +39,7 @@ To run this you can choose one of two paths:
 
 ## Usage
 
-You can use this project to make a digital signature of a message.
+You can use this project to make a digital signature for a message by using the ElGamal Encryption method.
 
 ![Home screen preview](https://drive.google.com/uc?export=view&id=1DegfzsETtUZEaCHKfA6rj0qXY7cljIhL)
 
@@ -47,13 +47,13 @@ It has two primary modes of execution
 
 1. Automatic
 2. 
-In this mode you just enter the message and the generation of the private and public keys and the prime number is automatic.
+This mode has only input field which is the message awaiting to be signed, the keys will be generated randomly and a digital signature will be shown.
 
 ![Automatic mode](https://drive.google.com/uc?export=view&id=1WE25Nfoq_bUYC2z0cllWuOSTnZLdvNva)
 
 2. Manual
 3. 
-In this mode the message, the private key, the public key and the prime number needed for the algorithm must be set manually.
+This mode has multiple input fields: one for the message, three for the public keys and one for the private key. A digital signature will be shown.
 
 
 ## Contributing
