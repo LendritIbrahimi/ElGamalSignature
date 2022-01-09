@@ -24,26 +24,26 @@ To run this you can choose one of two paths:
 2. Visual Studio
 
 -Download from https://visualstudio.microsoft.com/downloads/
-https://drive.google.com/uc?export=view&id=
--Download the source code ![Download the source code](https://drive.google.com/uc?export=view&id=1svkjbWMWeZK4RJ9Q5mRAlzBr4gd3W-fT/view?usp=sharing)
+
+-Download the source code ![Download the source code](https://drive.google.com/uc?export=view&id=1svkjbWMWeZK4RJ9Q5mRAlzBr4gd3W-fT)
 
 -Open the **.sln** in Visual Studio
 
--Build and Run project ![Run](https://drive.google.com/uc?export=view&id=1YTl73yACNpHhf5JE7VuXC7dty2DMZIMx/view?usp=sharing)
+-Build and Run project ![Run](https://drive.google.com/uc?export=view&id=1YTl73yACNpHhf5JE7VuXC7dty2DMZIMx)
 
 
 ## Usage
 
 You can use this project to make a digital signature of a message.
 
-![Home screen preview](https://drive.google.com/uc?export=view&id=1DegfzsETtUZEaCHKfA6rj0qXY7cljIhL/view?usp=sharing)
+![Home screen preview](https://drive.google.com/uc?export=view&id=1DegfzsETtUZEaCHKfA6rj0qXY7cljIhL)
 
 It has two primary modes of execution
 
 1. Automatic
 In this mode you just enter the message and the generation of the private and public keys and the prime number is automatic.
 
-![Automatic mode](https://drive.google.com/uc?export=view&id=1WE25Nfoq_bUYC2z0cllWuOSTnZLdvNva/view?usp=sharing)
+![Automatic mode](https://drive.google.com/uc?export=view&id=1WE25Nfoq_bUYC2z0cllWuOSTnZLdvNva)
 
 2. Manual
 In this mode the message, the private key, the public key and the prime number needed for the algorithm must be set manually.
