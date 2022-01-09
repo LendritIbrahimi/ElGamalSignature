@@ -73,6 +73,11 @@ namespace ElgamalEncryption
 
         private void btnMSign_Click(object sender, EventArgs e)
         {
+            if (txtPublicMP.Text == string.Empty || txtMPrivateKey.Text == string.Empty
+                || txtPublicMY.Text == string.Empty || txtPublicMG.Text == string.Empty)
+            {
+                return;
+            }
             // hash digest for the input
             MD5 md5 = MD5.Create();
             byte[] inputBytes = Encoding.Default.GetBytes(txtMMessage.Text);
@@ -81,11 +86,16 @@ namespace ElgamalEncryption
 
             // create an instance of the algorithm and generate some keys
             ElGamalKeyStruct keys = new ElGamalKeyStruct();
-
-            keys.P = new BigInteger(txtPublicMP.Text, 10);
-            keys.X = new BigInteger(txtMPrivateKey.Text, 10);
-            keys.Y = new BigInteger(txtPublicMY.Text, 10);
-            keys.G = new BigInteger(txtPublicMG.Text, 10);
+            try
+            {
+                keys.P = new BigInteger(txtPublicMP.Text, 10);
+                keys.X = new BigInteger(txtMPrivateKey.Text, 10);
+                keys.Y = new BigInteger(txtPublicMY.Text, 10);
+                keys.G = new BigInteger(txtPublicMG.Text, 10);
+            }catch(Exception ex)
+            {
+                return;
+            }
 
             // create a signature for the plaintext
             ElGamal x_sign_alg = new ElGamalManaged();
@@ -130,28 +140,64 @@ namespace ElgamalEncryption
         // this part handles all the copy buttons
         private void btnMHashCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(txtMMessageHash.Text);
+            try
+            {
+                Clipboard.SetText(txtMMessageHash.Text);
+
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
         }
 
         private void btnMSignatureCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(txtMSignature.Text);
+            try
+            {
+                Clipboard.SetText(txtMSignature.Text);
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
         }
 
 
         private void btnPublicP_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(txtPublicP.Text);
+            try
+            {
+                Clipboard.SetText(txtPublicP.Text);
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
         }
 
         private void btnSignature_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(txtOutput.Text);
+            try
+            {
+                Clipboard.SetText(txtOutput.Text);
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
         }
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(txtMessageDigest.Text);
+            try
+            {
+                Clipboard.SetText(txtMessageDigest.Text);
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
         }
     }
 }
