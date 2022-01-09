@@ -4,6 +4,8 @@ The aim of this project is to extend the Microsoft **[.NET framework](https://do
 
 By necessity the **C#** language was used for the implementation details of the algorithm and the Windows Forms (**WinForms**) library for the GUI side of the application.
 
+The implementation of this algorithm has been adapted from the **[eTutorials](http://etutorials.org/)** chapter [15.3 Extending the .NET Framework](http://etutorials.org/Programming/Programming+.net+security/Part+III+.NET+Cryptography/Chapter+15.+Asymmetric+Encryption/15.3+Extending+the+.NET+Framework/?fbclid=IwAR3YQ16U1oiUFXItcU4pHlS8wgZuC31KvbrDwnbcHh12LBpwFgLlikMl2ww%2F/).
+
 ## Cryptography
 
 In cryptography, the **[ElGamal encryption](https://en.wikipedia.org/wiki/ElGamal_encryption)** system is an asymmetric key encryption algorithm for public-key cryptography.
@@ -11,9 +13,6 @@ In cryptography, the **[ElGamal encryption](https://en.wikipedia.org/wiki/ElGama
 A **[digital signature](https://en.wikipedia.org/wiki/Digital_signature)** is a mathematical technique used to validate the authenticity and integrity of a message, software or digital document.
 
 ElGamal encryption is used in the free **[GNU Privacy Guard](https://gnupg.org/)** software, recent versions of **[Pretty Good Privacy](https://en.wikipedia.org/wiki/Pretty_Good_Privacy)** (PGP), and other cryptosystems.
-
-The implementation of this algorithm has been adapted from the **[eTutorials](http://etutorials.org/)** chapter [15.3 Extending the .NET Framework](http://etutorials.org/Programming/Programming+.net+security/Part+III+.NET+Cryptography/Chapter+15.+Asymmetric+Encryption/15.3+Extending+the+.NET+Framework/?fbclid=IwAR3YQ16U1oiUFXItcU4pHlS8wgZuC31KvbrDwnbcHh12LBpwFgLlikMl2ww%2F/).
-
 
 ## Installation and Execution
 To run this you can choose one of two paths:
