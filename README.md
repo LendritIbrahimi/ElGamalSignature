@@ -1,14 +1,16 @@
 # ElGamal Encryption
-In cryptography, the **[ElGamal encryption](https://en.wikipedia.org/wiki/ElGamal_encryption)** system is an asymmetric key encryption algorithm for public-key cryptography.
-
-A **[digital signature](https://en.wikipedia.org/wiki/Digital_signature)** is a mathematical technique used to validate the authenticity and integrity of a message, software or digital document.
-
-ElGamal encryption is used in the free **[GNU Privacy Guard](https://gnupg.org/)** software, recent versions of **[Pretty Good Privacy](https://en.wikipedia.org/wiki/Pretty_Good_Privacy)** (PGP), and other cryptosystems.
 
 The aim of this project is to extend the Microsoft **[.NET framework](https://dotnet.microsoft.com/en-us/)** by implementing the ElGamal encryption algorithm.
 
 By necessity the **C#** language was used for the implementation details of the algorithm and the Windows Forms (**WinForms**) library for the GUI side of the application.
 
+## Cryptography
+
+In cryptography, the **[ElGamal encryption](https://en.wikipedia.org/wiki/ElGamal_encryption)** system is an asymmetric key encryption algorithm for public-key cryptography.
+
+A **[digital signature](https://en.wikipedia.org/wiki/Digital_signature)** is a mathematical technique used to validate the authenticity and integrity of a message, software or digital document.
+
+ElGamal encryption is used in the free **[GNU Privacy Guard](https://gnupg.org/)** software, recent versions of **[Pretty Good Privacy](https://en.wikipedia.org/wiki/Pretty_Good_Privacy)** (PGP), and other cryptosystems.
 
 ## Installation and Execution
 To run this you can choose one of two paths:
