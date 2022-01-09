@@ -29,7 +29,7 @@ To run this you can choose one of two paths:
 
 -Open the **.sln** in Visual Studio
 
--Build and Run project ![Run] (https://drive.google.com/file/d/1YTl73yACNpHhf5JE7VuXC7dty2DMZIMx/view?usp=sharing)
+-Build and Run project ![Run](https://drive.google.com/file/d/1YTl73yACNpHhf5JE7VuXC7dty2DMZIMx/view?usp=sharing)
 
 
 ## Usage
@@ -54,9 +54,13 @@ In this mode the message, the private key, the public key and the prime number n
 This project is closed, and will not be updated further.
 
 The collaborators and creators of this project are: 
+
 Kastriot Salihu @kastriotsalihu1
+
 Lendrit Ibrahimi @LendritIbrahimi
+
 Nazife Beqiri @NazifeBEQIRI
+
 Urim Hoxha @UrimH
 
 ## License 
