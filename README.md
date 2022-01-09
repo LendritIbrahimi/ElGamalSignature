@@ -16,26 +16,19 @@ ElGamal encryption is used in the free **[GNU Privacy Guard](https://gnupg.org/)
 To run this you can choose one of two paths:
 
 1. Releases
-
--Go to https://github.com/kastriotsalihu1/elgamal-encryption/releases
-
--download the latest relase assets
-
--execute the **.exe** file, or
+   - Go to https://github.com/kastriotsalihu1/elgamal-encryption/releases
+   - download the latest relase assets
+   - execute the **.exe** file, or
 
 2. Visual Studio
+   - Download Visual Studio from https://visualstudio.microsoft.com/downloads/
+   - Download the source code 
+   
+   ![Download the source code](https://drive.google.com/uc?export=view&id=1svkjbWMWeZK4RJ9Q5mRAlzBr4gd3W-fT)
+   - Open the **.sln** in Visual Studio
+   - Build and Run project
 
--Download Visual Studio from https://visualstudio.microsoft.com/downloads/
-
--Download the source code
-
-![Download the source code](https://drive.google.com/uc?export=view&id=1svkjbWMWeZK4RJ9Q5mRAlzBr4gd3W-fT)
-
--Open the **.sln** in Visual Studio
-
--Build and Run project
-
-![Run](https://drive.google.com/uc?export=view&id=1YTl73yACNpHhf5JE7VuXC7dty2DMZIMx)
+   ![Run](https://drive.google.com/uc?export=view&id=1YTl73yACNpHhf5JE7VuXC7dty2DMZIMx)
 
 ## Usage
 
@@ -62,13 +55,13 @@ This project is closed, and will not be updated further.
 
 The collaborators and creators of this project are: 
 
-Kastriot Salihu @kastriotsalihu1
+@kastriotsalihu1 - Kastriot Salihu
 
-Lendrit Ibrahimi @LendritIbrahimi
+@LendritIbrahimi - Lendrit Ibrahimi
 
-Nazife Beqiri @NazifeBEQIRI
+@NazifeBEQIRI - Nazife Beqiri
 
-Urim Hoxha @UrimH
+@UrimH - Urim Hoxha
 
 ## License 
 
