@@ -15,12 +15,14 @@ namespace ElgamalEncryption.Algorithm
         public ElGamalManaged()
         {
             // create the key struct
-            o_key_struct = new ElGamalKeyStruct();
-            // set all of the big integers to zero
-            o_key_struct.P = new BigInteger(0);
-            o_key_struct.G = new BigInteger(0);
-            o_key_struct.Y = new BigInteger(0);
-            o_key_struct.X = new BigInteger(0);
+            o_key_struct = new ElGamalKeyStruct
+            {
+                // set all of the big integers to zero
+                P = new BigInteger(0),
+                G = new BigInteger(0),
+                Y = new BigInteger(0),
+                X = new BigInteger(0)
+            };
 
             //The other task the constructor performs defines the range of key lengths that the implementation supports. We have selected 384 bits as the shortest key supported to conform to the .NET RSA implementation. We define 1088 bits as the largest value because of the size limitations when using the BigInteger class; even though we have doubled the largest value that this class can represent, we still exceed that limit when performing the encryption computation for larger key sizes. We set the default key size to be 1024 bits, which provides a key strength that is suitable for most projects:
 
