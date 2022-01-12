@@ -527,10 +527,10 @@ namespace ElgamalEncryption
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(686, 267);
+            this.ClientSize = new System.Drawing.Size(686, 266);
             this.Controls.Add(this.pnlAutomatic);
             this.Controls.Add(this.pnlManual);
             this.Controls.Add(this.rbManual);

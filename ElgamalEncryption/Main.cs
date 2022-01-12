@@ -27,12 +27,12 @@ namespace ElgamalEncryption
             // this will resize the window based on the users preference
             if (showMore)
             {
-                this.Height = 688;
+                this.Height = pnlAutomatic.Height + pnlAutomatic.Location.Y + 30;
                 btnInfo.Text = "Show Less";
             }
             else
             {
-                this.Height = 314;
+                this.Height = pnlOutput.Height + pnlAutomatic.Location.Y + 50;
                 btnInfo.Text = "Show More";
             }
         }
@@ -92,7 +92,8 @@ namespace ElgamalEncryption
                 keys.X = new BigInteger(txtMPrivateKey.Text, 10);
                 keys.Y = new BigInteger(txtPublicMY.Text, 10);
                 keys.G = new BigInteger(txtPublicMG.Text, 10);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return;
             }

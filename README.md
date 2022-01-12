@@ -18,7 +18,7 @@ ElGamal encryption is used in the free **[GNU Privacy Guard](https://gnupg.org/)
 To run this you can choose one of two paths:
 
 1. Releases
-   - Go to https://github.com/kastriotsalihu1/elgamal-encryption/releases
+   - Go to https://github.com/lendritbrahimi/elgamalsignature/releases
    - download the latest relase assets
    - execute the **.exe** file, or
 
@@ -58,21 +58,17 @@ This mode has multiple input fields: one for the message, three for the public k
 
 This project is closed, and will not be updated further.
 
-The collaborators and creators of this project are: 
+The collaborators and creators of this project in alphabetical order are: 
 
 @kastriotsalihu1 - Kastriot Salihu
 
 @LendritIbrahimi - Lendrit Ibrahimi
 
-@NazifeBEQIRI - Nazife Beqiri
-
-@UrimH - Urim Hoxha
-
 ## License 
 
 MIT License
 
-Copyright (c) 2022 kastriot
+Copyright (c) 2022 Lendrit Ibrahimi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
